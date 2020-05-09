@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ChatApp"
+             xmlns:custom="clr-namespace:ChatApp"
+             mc:Ignorable="d"
+             x:Class="ChatApp.MainPage">
+    <ContentPage.Content>
+    <StackLayout>
+        <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="#60AFFE">
+                <BoxView VerticalOptions="StartAndExpand" BackgroundColor="#60AFFE" HeightRequest="320" WidthRequest="320"/>
+        </StackLayout>
+        <StackLayout BackgroundColor="White" Margin="5,0,5,5" VerticalOptions="StartAndExpand">
+
+            <custom:CustomEntry x:Name="logemail" CornerRadius="10" IsCurvedCornersEnabled="True" Keyboard="Email" BorderColor="Black" BorderWidth="5" HorizontalTextAlignment="Center" FontSize="16" Placeholder="Email" PlaceholderColor="LightGray" TextColor="Black" WidthRequest="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+            <Grid ColumnSpacing="8" HorizontalOptions="Fill" BackgroundColor="Black" IsClippedToBounds="True" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*" />
+                    <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                    <BoxView Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" Margin="1.5,1.5,1.5,1.5" CornerRadius="5"/>
+                    <custom:CustomEntry x:Name="logpass" Keyboard="Default" BorderColor="Transparent" Grid.Column="0" Grid.Row="0" MaxLength="16" IsPassword="True" HorizontalTextAlignment="Center" FontSize="16" Placeholder="Password" PlaceholderColor="LightGray" TextColor="Black" WidthRequest="10" VerticalOptions="Start" />
+                    <Button x:Name="pass" Grid.Column="1" Grid.Row="0" TextColor="Black" BackgroundColor="LightGray" FontSize="10" FontAttributes="Bold" Margin="5,5,5,5" Text="Show" WidthRequest="60" CornerRadius="12" HeightRequest="30" Clicked="Pass_Clicked" HorizontalOptions="EndAndExpand"/>
+            
+            </Grid>
+        
+            <Label x:Name="forgotpass"  Text="Forgot Password" HorizontalOptions="End" BackgroundColor="white" TextColor="LightGray" />
+            <Button x:Name="signin" Text="Sign in" Clicked="Signin_CLicked" TextColor="Black" BorderRadius="10" BorderWidth="1" BorderColor="LightGreen" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="LightGreen"/>
+            <Button x:Name="create" Text="Create an account" Clicked="Handle_CLicked" TextColor="Black" BorderRadius="10" BorderWidth="1" BorderColor="LightGray" VerticalOptions="Start" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray"/>
+
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="49*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="49*" />
+                    </Grid.ColumnDefinitions>
+                    <Frame HeightRequest="2" Grid.Column="0" HasShadow="False">
+                        <BoxView Color="Black" HorizontalOptions="Fill"/>
+                    </Frame>
+
+                    <Label x:Name="or" Text="or" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="LightGray" Grid.Column="1" />
+                    <Frame HeightRequest="2" Grid.Column="2" HasShadow="False">
+                        <BoxView Color="Black" HorizontalOptions="Fill"/>
+                    </Frame>
+            </Grid>
+
+                <Grid ColumnSpacing="8" HorizontalOptions="FillAndExpand" Margin="0,0,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.33*" />
+                    <ColumnDefinition Width="33.33*" />
+                </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29"/>
+                    </Grid.RowDefinitions>
+                    <ImageButton Source="GoogleSignIn.png" Grid.Column="0" Grid.Row="0" Clicked="Google_CLicked" CornerRadius="5" BorderWidth="1" BorderColor="LightGray"/>
+                    <ImageButton Source="FacebookSignIn.png" Grid.Column="1" Grid.Row="0" Clicked="Signin2_CLicked" CornerRadius="2" BorderWidth="2" BorderColor="White"/>
+            </Grid>
+        
+        </StackLayout>
+    </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

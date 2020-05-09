@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom" BarBackgroundColor="#60AFFE" BarTextColor="White"
+            android:TabbedPage.BarItemColor="#66FFFFFF"
+            android:TabbedPage.BarSelectedItemColor="White"
+             mc:Ignorable="d"
+             x:Class="ChatApp.TabbedPage1">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Chat" Icon="ChatIcon.png">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="Chat Page" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Profile" Icon="PersonIcon.png" BackgroundColor="White">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="Center" Margin="10,10,10,10" BackgroundColor="White">
+                <Frame Margin="10" BorderColor="Black" CornerRadius="50" HeightRequest="60" WidthRequest="60" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="logo.png" Margin="-20" Aspect="AspectFill" HeightRequest="100" WidthRequest="100"/>
+                </Frame>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25.33*"/>
+                        <ColumnDefinition Width="50.33*"/>
+                        <ColumnDefinition Width="25.33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <ImageButton Source="EditIcon.png" BackgroundColor="White" HeightRequest="20" WidthRequest="20" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" />
+                    <Label x:Name="name" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" TextColor="Gray" FontSize="20" FontAttributes="Bold"/>
+                </Grid>
+                <Label x:Name="email" HorizontalOptions="Center" TextColor="Gray" FontSize="Small"/>
+                <Button x:Name="logout" Text="Sign out" Clicked="LogoutButton_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray" BorderRadius="10" BorderWidth="1" BorderColor="Gray"/>
+                
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>
